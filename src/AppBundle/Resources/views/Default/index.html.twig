@@ -1,18 +1,38 @@
-<header>Redmine test</header>
-<div class="navigation">
-    <ul class="items">
-        <li class="item">
-            <a href="{{ path('all-projects') }}">Projects</a>
-            <ul>
-                <li><a href="{{ path('create-project') }}">New Project</a></li>
-                <li><a href="{{ path('create-project') }}">Edit Project</a></li>
-                <li><a href="{{ path('create-project') }}">Remove Project</a></li>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock title %}</title>
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    </head>
+    <body>
+
+    {% block navigation %}
+        <div class="navigation">
+            <ul class="items">
+                <li class="item">
+                    <a href="{{ path('all-projects') }}">All Projects</a>
+                </li>
+                <li class="item"><a href="{{ path('all-projects') }}">Issues</a></li>
             </ul>
-        </li>
-        <li class="item"><a href="{{ path('all-projects') }}">Issues</a></li>
-        <li class="item"><a href="{{ path('all-projects') }}">Users</a></li>
-    </ul>
-</div>
-<div class="content">
-    Main page
-</div>
+        </div>
+    {% endblock navigation %}
+
+    {% block body %}
+        <h2 class="title">Redmine test</h2>
+            <div class="content">
+                {% block maincontent %}
+                    Main page
+                {% endblock maincontent %}
+            </div>
+
+            <div class="sidebar">
+                {% block sidebar %}
+                        fasfg
+                {% endblock sidebar %}
+            </div>
+
+
+    {% endblock body %}
+    </body>
+</html>

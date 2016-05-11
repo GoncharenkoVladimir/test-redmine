@@ -53,14 +53,18 @@ class ProjectController extends Controller
     }
 
     /**
-     * @Route("/edit-project", name="edit-project")
+     * @Route("/project/{id}", name="project")
+     * @param integer $id
      * @Template()
+     * @return array
      */
-    public function editProjectAction(Request $request)
+    public function showProjectAction($id, Request $request)
     {
         $client = new Redmine\Client('https://redmine.ekreative.com', 'test', '9uu82T487m6V41G');
+        $project = $client->api('project')->show($id);
+        $issues = $client->api('issue')->all(array('project_id'     => $id));
 
-        return [];
+        return ['project' => $project, 'issues' => $issues];
     }
     /**
      * @Route("/remove-project", name="remove-project")

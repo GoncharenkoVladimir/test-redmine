@@ -1,21 +1,23 @@
-<div>
-    <table>
+{% extends '@App/Default/index.html.twig' %}
+{% block maincontent %}
+    <table class="projects">
         <thead>
-            <td>name</td>
-            <td>identifier</td>
-            <td>description</td>
-            <td>created_on</td>
-            <td>updated_on</td>
+        <td>id</td>
+        <td>name</td>
+        <td>identifier</td>
+        <td>description</td>
+        <td>created_on</td>
+        <td>updated_on</td>
         </thead>
         {% for value in projects.projects %}
             <tr>
-                <td>{{ value.name }}</td>
+                <td>{{ value.id }}</td>
+                <td><a href="{{ path('project', { 'id': value.id }) }}">{{ value.name }}</a></td>
                 <td>{{ value.identifier }}</td>
                 <td>{{ value.description }}</td>
                 <td>{{ value.created_on | date  }}</td>
                 <td>{{ value.updated_on | date }}</td>
             </tr>
         {% endfor %}
-        <tr></tr>
     </table>
-</div>
+{% endblock maincontent %}

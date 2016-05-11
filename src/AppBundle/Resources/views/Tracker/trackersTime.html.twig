@@ -1,0 +1,22 @@
+{% extends '@App/Default/index.html.twig' %}
+
+{% block maincontent %}
+    <h2 class="title">Detail</h2>
+    <table>
+        <thead>
+        <td>id</td>
+        <td>user</td>
+        <td>hours</td>
+        <td>date</td>
+        </thead>
+        {% for value in trackers_time.time_entries %}
+            <tr>
+                <td>{{ value.id }}</td>
+                <td>{{ value.user.name }}</td>
+                <td>{{ value.hours }}</td>
+                <td>{{ value.created_on | date }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+

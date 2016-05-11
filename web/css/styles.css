@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+}
+.navigation ul li{
+    display: inline-block;
+    list-style: none;
+}
+.title{
+    text-align: center;
+}
+table td{
+    border: 1px solid black;
+}
+table thead{
+    background-color: #6c6159;
+}
+
+.content{
+    width: 80%;
+    float: left;
+}
+.sidebar{
+    width: 20%;
+    border: 2px solid black;
+    box-sizing: border-box;
+    float: left;
+    height: 200px;
+    padding: 20px;
+}
