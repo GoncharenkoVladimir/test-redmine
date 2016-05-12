@@ -3,6 +3,7 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -15,7 +16,13 @@ class NewTracker extends AbstractType
     {
         $builder
             ->add('hours', TextType::class)
-            ->add('activityId', TextType::class)
+            ->add('activityId', ChoiceType::class, array(
+                'choices'  => array(
+                    '8' => 'Design',
+                    '9' => 'Development',
+                    '10' => 'Management',
+                    '11' => 'Testing',
+                )))
             ->add('comments', TextareaType::class)
             ->setMethod('POST')
         ;

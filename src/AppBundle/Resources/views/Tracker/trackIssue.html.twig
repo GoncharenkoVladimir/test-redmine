@@ -1,0 +1,11 @@
+{% extends '@App/Default/index.html.twig' %}
+{% block maincontent %}
+    <h2>Track time Issue</h2>
+    <div>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+
+        <input type="submit" value="Save" class="btn btn-primary btn-lg"/>
+        {{ form_end(form) }}
+    </div>
+{% endblock maincontent %}

@@ -1,0 +1,16 @@
+{% extends '@App/Default/index.html.twig' %}
+
+{% block maincontent %}
+    <h2 class="title">Issue {{ issue.issue.id }}</h2>
+    <div class="issue_content">
+        <p class="subject">Subject: {{ issue.issue.subject }}</p>
+        <p class="author">Author: {{ issue.issue.author.name }}</p>
+        <p class="description">Description: {{ issue.issue.description }}</p>
+    </div>
+{% endblock %}
+
+{% block sidebar %}
+    <a href="{{ path('track-issue', { 'id': issue.issue.id }) }}">Track time</a>
+    <a href="{{ path('trackers-time-issue', { 'id': issue.issue.id }) }}">Detail</a>
+{% endblock sidebar %}
+

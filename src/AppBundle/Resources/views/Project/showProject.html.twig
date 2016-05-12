@@ -23,7 +23,7 @@
                 <td>{{ value.status.name }}</td>
                 <td>{{ value.priority.name }}</td>
                 <td>{{ value.author.name }}</td>
-                <td>{{ value.subject }}</td>
+                <td><a href="{{ path('show-issue', {'id': value.id }) }}">{{ value.subject }}</a></td>
                 <td>{{ value.description }}</td>
             </tr>
         {% endfor %}
@@ -32,7 +32,7 @@
 
 {% block sidebar %}
     <a href="{{ path('track-project', { 'id': project.project.id }) }}">Track time</a>
-    <a href="{{ path('trackers-time')}}">Detail</a>
+    <a href="{{ path('trackers-time', { 'id': project.project.id }) }}">Detail</a>
 {% endblock sidebar %}
 
 
