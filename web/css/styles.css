@@ -7,6 +7,12 @@ body{
 }
 .title{
     text-align: center;
+
+    margin: 0;
+    padding: 30px 20px;
+}
+.home_title{
+    background: #fffdcd;
 }
 table td{
     border: 1px solid black;
@@ -18,6 +24,8 @@ table thead{
 .content{
     width: 80%;
     float: left;
+    padding: 20px;
+    box-sizing: border-box;
 }
 .sidebar{
     width: 20%;
@@ -26,4 +34,54 @@ table thead{
     float: left;
     height: 200px;
     padding: 20px;
+}
+.sidebar a{
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    background: #66dd66;
+    text-decoration: none;
+    margin-right: 5px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.items{
+    margin: 0;
+    padding: 20px;
+    background: #232317;
+}
+.items a{
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+.items a:hover{
+    color: #5eb5e0;
+}
+
+#new_tracker label{
+    display: inline-block;
+    width: 100px;
+}
+#new_tracker input{
+    height: 20px;
+    width: 50px;
+}
+#new_tracker > div{
+    margin-bottom: 15px;
+}
+#new_tracker textarea{
+    height: 50px;
+    width: 400px;
+}
+#new_tracker select{
+    height: 50px;
+    width: 200px;
+}
+input[type=submit]{
+    width: 100px;
+    height: 30px;
+    display: block;
+    background: #598079;
 }
